@@ -19,14 +19,14 @@
                     <li class="list-inline-item">
                         <a href="#" class="btn btn-secondary btn-lg">
                             <i class="fa fa-clock-o fa-fw"></i>
-                            <span class="network-name">Log In</span>
+                            <span class="network-name">Log Out</span>
                         </a>
                     </li>
                    
-                    <li class="list-inline-item"  >
-                        <a href="@Url.Action("Login", "Account")" class="btn btn-secondary btn-lg" onclick="diamo();">
+                    <li class="list-inline-item">
+                        <a href="@Url.Action("Login", "Account")" data-modal="" class="btn btn-secondary btn-lg" ">
                             <i class="fa fa-clock-o fa-fw"></i>
-                            <span class="network-name" >Log Out</span>
+                            <span class="network-name" >Log In</span>
                         </a>
                     </li>
                 </p>
@@ -35,10 +35,23 @@
                 <img class="img-fluid" src="@Url.Content("~/Content/temp/")vendor/img/person-writing-in-logbook.jpg" alt="">
             </div>
         </div>
-
+        
+        <!-- Modal Placeholder -->
+        <div id='myModal' class='modal modal-primary fade in'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-content" id='myModalContent'></div>
+            </div>
+        </div>
+        
+    </div>
     </div>
     <!-- /.container -->
 
 
 </section>
 
+@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script type="text/javascript" src="~/Scripts/override-modal.js"></script>
+}
