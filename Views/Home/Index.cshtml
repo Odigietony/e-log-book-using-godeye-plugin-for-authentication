@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+
+<section class="content-section-a">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 ml-auto">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">E Log Boook:<br>What's the fuss all about</h2>
+                <p class="lead">
+                    A simple E log in/time in application that allows employees to log in and out of work without writing on a 
+                    hard covered log book. Also allows employers view the log chart to see punctual or late employees and to basically
+                    have an overview of all emplyees in the organisation.
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-clock-o fa-fw"></i>
+                            <span class="network-name">Log In</span>
+                        </a>
+                    </li>
+                   
+                    <li class="list-inline-item"  >
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-secondary btn-lg" onclick="diamo();">
+                            <i class="fa fa-clock-o fa-fw"></i>
+                            <span class="network-name" >Log Out</span>
+                        </a>
+                    </li>
+                </p>
+            </div>
+            <div class="col-lg-5 mr-auto">
+                <img class="img-fluid" src="@Url.Content("~/Content/temp/")vendor/img/person-writing-in-logbook.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+</section>
+

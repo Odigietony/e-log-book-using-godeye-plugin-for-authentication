@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/temp/")vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="@Url.Content("~/Content/temp/")vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/temp/")https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/temp/")vendor/css/landing-page.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/temp/")vendor/css/Login.css" rel="stylesheet">
+
+    <link href="~/Content/temp/vendor/jquery/jquery-ui.css" rel="stylesheet" />
+     @Scripts.Render("~/bundles/modernizr")
+    <script src="@Url.Content("~/Content/temp/")vendor/jquery/jquery.min.js"></script>
+    <script src="@Url.Content("~/Content/temp/")vendor/jquery/jquery-ui-1.12.1.min.js"></script>
+    <script src="@Url.Content("~/Content/temp/")vendor/popper/popper.min.js"></script>
+    <script src="@Url.Content("~/Content/temp/")vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+
+        $(function diamo() {
+            $("#dialog-modal").dialog({
+
+                width: 850,
+                height:450,
+                show: {
+                    effect: "shake",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 900,
+                   
+                }
+            });
+
+            $("#modal-opener").click(function () {
+                $("#dialog-modal").load("Account/Login", function () {
+                    $("#dialog-modal").dialog("open");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            @*<a class="navbar-brand" href="#">Start Bootstrap</a>*@
+            @Html.ActionLink("E Log Book", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    @*<li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>*@
+                    <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</a></li>
+                    <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</a></li>
+                    <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</a></li>
+                    @*<li class=" nav-item"><a class="nav-link" href=" @Html.Partial("_LoginPartial")"</a> </li>*@
+                </ul>
+              
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+        <div class="container">
+           
+            <div class="intro-message">
+                    @*<img class="img-fluid" src="@Url.Content("~/Content/temp/")vendor/img/nta-logo-200.jpg" alt="" width="95" height="95">*@
+               
+                <h1>E Log Book</h1>
+                <h3>An Online way to keep track of users time logs.</h3>
+                <hr class="intro-divider">
+                <ul class="list-inline intro-social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-twitter fa-fw"></i>
+                            <span class="network-name">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-instagram fa-fw"></i>
+                            <span class="network-name">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-secondary btn-lg">
+                            <i class="fa fa-facebook fa-fw"></i>
+                            <span class="network-name">Facebook</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <hr />
+    <div>
+        @RenderBody()
+    </div>
+    <hr />
+    <aside class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 my-auto">
+                    <h2>Connect to Stay Informed:</h2>
+                </div>
+                <div class="col-lg-6 my-auto">
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-secondary btn-lg">
+                                <i class="fa fa-twitter fa-fw"></i>
+                                <span class="network-name">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-secondary btn-lg">
+                                <i class="fa fa-instagram fa-fw"></i>
+                                <span class="network-name">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-secondary btn-lg">
+                                <i class="fa fa-facebook fa-fw"></i>
+                                <span class="network-name">Facebook</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </aside>
+    <!-- /.banner -->
+    
+    <footer>
+        <div class="container">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="footer-menu-divider list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                    <a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</a>
+                </li>
+                <li class="footer-menu-divider list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                    <a class="nav-link" @Html.ActionLink("About", "About", "Home")</a>
+                </li>
+                <li class="footer-menu-divider list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                    <a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</a>
+                </li>
+            </ul>
+            <p class="copyright text-muted small">E Log Book &copy; @DateTime.Now.Year. All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
